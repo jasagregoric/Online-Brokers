@@ -1,0 +1,368 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100% !important;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: #121212;
+}
+
+.title {
+    text-align: center;
+    font-size: 23px;
+    color: white;
+    padding: 15px 0;
+    font-family: sans-serif;
+}
+
+.titlePicture {
+    margin-right: 10px;
+}
+
+.centered-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pageTitle {
+    font-weight: 100;
+    margin-right: 5px;
+}
+
+.pageTitle2 {
+    font-weight: bold;
+}
+
+.hrTitle {
+    border-top: 2px solid red;
+    border-bottom: 1px solid red;
+}
+
+.main {
+    flex: 1;
+    background-color: #1d1d1d;
+    color: white;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.stocks {
+    width: 60%;
+    font-family: sans-serif;
+    padding-top: 10px;
+}
+
+.titleStocks {
+    font-weight: 100;
+    text-align: center;
+}
+
+.stockTable {
+    width: 100%;
+    height: 100%;
+    height: max-content;
+    border-collapse: collapse;
+}
+
+.stockInfo{
+    padding-left: 15PX;
+    padding-bottom: 5px;
+    font-size: 13px;
+}
+
+tr:hover:not(.names) {
+    background-color: #292929;
+}
+
+.names {
+    font-size: 15px;
+    color: #8d8d8d;
+}
+
+.stockName, .stock {
+    height: 75px;
+    padding-left: 15px;
+    border-top: #292929 solid 2px;
+}
+ 
+.bottom{
+    border-bottom: #292929 solid 2px;
+}
+
+.stockName {
+    width: 40%;
+}
+
+.stockNameLong{
+    font-size: 15px;
+    color: #8d8d8d;
+}
+
+.stock {
+    width: 20%;
+}
+
+.portfolio {
+    width: 40%;
+    padding-top: 5px;
+    border-left: #121212 solid 2px;
+}
+
+.up{
+    height: 13%;
+    width: 100%;
+    padding-top: 25px;
+    border-bottom: 2px solid #121212;
+    font-size: 40px;
+    font-family: sans-serif;
+    padding-left: 20px;
+}
+
+#balTxt{
+    height: 100%;
+    margin: auto;
+    float: left;
+    width: 50%;
+}
+
+#balance{
+    float: right;
+    width: 50%;
+}
+
+.down{
+    height: 87%;
+    width: 100%;
+    padding-top: 30px;
+    background-color: #1a1a1a !important;
+}
+
+.portTitle{
+    padding-left: 17px;
+    font-family: sans-serif;
+    font-weight: 100;
+    font-size: 30px;
+    padding-bottom: 10px;
+    border-bottom: #292929 solid 2px;
+}
+
+#portTable{
+    width: 100%;
+    height: fit-content;
+    font-size: 20px;
+    font-family: sans-serif;
+    border-collapse: collapse;
+}
+
+#portTable tr {
+    border-bottom: 2px solid #292929;
+}
+
+footer {
+    text-align: center;
+    background-color: #121212;
+    color: white;
+    font-family: sans-serif;
+}
+
+.hrFooter {
+    border: 1px solid red;
+}
+
+@media screen and (max-width: 1300px) {
+    .form{
+        width: 45% !important;
+        height: 55%;
+        text-align: left !important;
+        background-color: #0c0c0c;
+        border-radius: 5px;
+        border: 1px solid red;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .stocks, .portfolio {
+        width: 100%;
+    }
+    .stockName, .chg, .stock {
+        height: 150px;
+        padding-left: 15px;
+        font-size: 30px;
+        border-top: #292929 solid 2px;
+    }
+    .stockInfo{
+        padding-left: 15PX;
+        padding-bottom: 5px;
+        font-size: 20px;
+    }
+    .stockNameLong{
+        font-size: 20px;
+    }
+    .form{
+        width: 60% !important;
+        height: 55%;
+        text-align: left !important;
+        background-color: #0c0c0c;
+        border-radius: 5px;
+        border: 1px solid red;
+    }
+}
+
+#overlaySMCI, #overlayTSLA, #overlayAMZN, #overlayMSFT, #overlayBTC, #overlayXRP, #overlayHEIA{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+.form{
+    width: 30%;
+    height: 55%;
+    text-align: left !important;
+    background-color: #0c0c0c;
+    border-radius: 5px;
+    border: 1px solid red;
+}
+
+.overlayTitle{
+    font-family: sans-serif;
+    margin-top: 20px;
+    margin-left: 20px;
+    font-weight: 150;
+    font-size: 45px;
+}
+
+.overlayTable{
+    border-collapse: collapse;
+    border: 1px solid red;
+    margin-left: 20px;
+    margin-top: 50px;
+}
+
+.usd, .shares{
+    width: 90px;
+    height: 45px;
+    text-align: center;
+    background-color: #0c0c0c;
+    font-size: 20px; 
+    font-family: sans-serif;
+}
+
+.usd{
+    border-right: 1px solid red;
+}
+
+.numberInput{
+    width: 65%;
+    height: 50px;
+    border: 2px solid red;
+    border-radius: 5px;
+    margin-top: 60px;
+    margin-left: 20px;
+    background-color: #0c0c0c;
+    padding-left: 10px;
+    font-size: 20px;
+    color: white;
+}
+
+.overlaySubmit{
+    width: 30%;
+    height: 45px;
+    background-color: #0c0c0c;
+    border: 2px solid red;
+    border-radius: 5px;
+    margin-left: 20px;
+    margin-top: 60px;
+    font-size: 20px;
+    color: red;
+    font-weight: 700;
+    font-family: sans-serif;
+}
+
+.overlayCancel{
+    width: 30%;
+    height: 45px;
+    background-color: red;
+    border: 2px solid #0c0c0c;
+    border-radius: 5px;
+    margin-left: 20px;
+    margin-top: 60px;
+    font-size: 20px;
+    color: #0c0c0c;
+    font-weight: 700;
+    font-family: sans-serif;
+}
+
+.overlaySubmit:hover{
+    background-color: #0c0c0c;
+    border: 2px solid red;
+    color: red;
+}
+
+.overlayCancel:hover{
+    background-color: red;
+    border: 2px solid #0c0c0c;
+    color: #0c0c0c;
+}
+
+.puchasedCell{
+    width: 50%;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.puchasedCell2{
+    width: 50%;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.red {
+    background-color: red;
+}
+
+.black {
+    background-color: #0c0c0c;
+}
+
+.redTxt {
+    color: red;
+}
+
+.greenTxt {
+    color: green;
+}
+
+.whiteTxt {
+    color: white;
+}
