@@ -1,28 +1,29 @@
 <?php
 $vsebina2 = file('https://finance.yahoo.com/quote/SMCI/');
 $vse2 = explode(" ", $vsebina2[9]);
-$f=303;
-$s=314;
-$t=326;
-$f2=301;
-$s2=312;
-$t2=324;
-$f3=299;
-$s3=311;
-$t3=323;
+$f=304;
+$s=315;
+$t=327;
+$f2=302;
+$s2=313;
+$t2=325;
+$f3=301;
+$s3=312;
+$t3=324;
 
-if($vse2[299]!="data-symbol=\"SMCI\""){
+if($vse2[298]!="data-symbol=\"SMCI\""){
     for($i=0; $i<count($vse2); $i++){
         if($vse2[$i]=="data-symbol=\"SMCI\""){
-            $f=$i-4;
-            $s=$i+7;
-            $t=$i+19;
-            $f2=$i-6;
-            $s2=$i+5;
-            $t2=$i+17;
-            $f3=$i-8;
-            $s3=$i+3;
-            $t3=$i+15;
+            $f=$i+5;
+            $s=$i+17;
+            $t=$i+29;
+            $f2=$i+4;
+            $s2=$i+15;
+            $t2=$i+27;
+            $f3=$i+3;
+            $s3=$i+14;
+            $t3=$i+26;
+            break;
         }
     }
 }

@@ -97,10 +97,11 @@ document.addEventListener("DOMContentLoaded", function() {
   stocksToProcess.forEach(function(stockName) {
     sessionCells.forEach(function(cell) {
       const name = cell['name' + stockName];
+      const stock = cell['stock' + stockName];
       const value = cell['newValue' + stockName];
 
       if (name !== undefined && value !== undefined) {
-        createCells(name, parseFloat(value).toFixed(2));
+        createCells(name, parseFloat(value).toFixed(2), parseFloat(stock).toFixed(2));
       }
     });
   });
@@ -149,7 +150,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if(hasEntry(purchasedStocks, "SMCI")== -1) {
       purchasedStocks.push(["SMCI", value, stock, price, price, 1, value]);
-      createCells("SMCI", value);
+      createCells("SMCI", value, stock);
 
       sessionCells.push({ nameSMCI: "SMCI", valueSMCI: value, stockSMCI: stock, priceSMCI: price, sumSmci: price, countSMCI: 1, newValueSMCI: value  });
       sessionStorage.setItem('sessionCells', JSON.stringify(sessionCells));
@@ -163,8 +164,10 @@ document.addEventListener("DOMContentLoaded", function() {
       purchasedStocks[$i][5]=parseFloat(purchasedStocks[$i][5])+1;
       purchasedStocks[$i][6] = parseFloat(purchasedStocks[$i][6]) + parseFloat(value);
 
-      const cell = document.getElementById('cell2SMCI');
-      cell.textContent = (parseFloat(purchasedStocks[$i][1]).toFixed(2));
+      const cell = document.getElementById('cell3SMCI');
+      cell.textContent = (parseFloat(purchasedStocks[$i][2]).toFixed(2));
+      const cell2 = document.getElementById('cell2SMCI');
+      cell2.textContent = (parseFloat(purchasedStocks[$i][1]).toFixed(2));
 
       const existingEntry = sessionCells.find(entry => entry.nameSMCI === "SMCI");
       existingEntry.valueSMCI = purchasedStocks[$i][1];
@@ -213,7 +216,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if(hasEntry(purchasedStocks, "TSLA")== -1) {
       purchasedStocks.push(["TSLA", value, stock, price, price, 1, value]);
-      createCells("TSLA", value);
+      createCells("TSLA", value, stock);
 
       sessionCells.push({ nameTSLA: "TSLA", valueTSLA: value, stockTSLA: stock, priceTSLA: price, sumTSLA: price, countTSLA: 1, newValueTSLA: value  });
       sessionStorage.setItem('sessionCells', JSON.stringify(sessionCells));
@@ -229,6 +232,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
       const cell = document.getElementById('cell2TSLA');
       cell.textContent = (parseFloat(purchasedStocks[$i][1]).toFixed(2));
+      const cel2 = document.getElementById('cell3TSLA');
+      cell2.textContent = (parseFloat(purchasedStocks[$i][2]).toFixed(2));
 
       const existingEntry = sessionCells.find(entry => entry.nameTSLA === "TSLA");
       existingEntry.valueTSLA = purchasedStocks[$i][1];
@@ -277,7 +282,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if(hasEntry(purchasedStocks, "AMZN")== -1) {
       purchasedStocks.push(["AMZN", value, stock, price, price, 1, value]);
-      createCells("AMZN", value);
+      createCells("AMZN", value, stock);
 
       sessionCells.push({ nameAMZN: "AMZN", valueAMZN: value, stockAMZN: stock, priceAMZN: price, sumAMZN: price, countAMZN: 1, newValueAMZN: value  });
       sessionStorage.setItem('sessionCells', JSON.stringify(sessionCells));
@@ -293,6 +298,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
       const cell = document.getElementById('cell2AMZN');
       cell.textContent = (parseFloat(purchasedStocks[$i][1]).toFixed(2));
+      const cell2 = document.getElementById('cell3AMZN');
+      cell2.textContent = (parseFloat(purchasedStocks[$i][2]).toFixed(2));
 
       const existingEntry = sessionCells.find(entry => entry.nameAMZN === "AMZN");
       existingEntry.valueAMZN = purchasedStocks[$i][1];
@@ -341,7 +348,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if(hasEntry(purchasedStocks, "MSFT")== -1) {
       purchasedStocks.push(["MSFT", value, stock, price, price, 1, value]);
-      createCells("MSFT", value);
+      createCells("MSFT", value, stock);
 
       sessionCells.push({ nameMSFT: "MSFT", valueMSFT: value, stockMSFT: stock, priceMSFT: price, sumMSFT: price, countMSFT: 1, newValueMSFT: value  });
       sessionStorage.setItem('sessionCells', JSON.stringify(sessionCells));
@@ -356,6 +363,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
       const cell = document.getElementById('cell2MSFT');
       cell.textContent = (parseFloat(purchasedStocks[$i][1]).toFixed(2));
+      const cell2 = document.getElementById('cell3MSFT');
+      cell2.textContent = (parseFloat(purchasedStocks[$i][2]).toFixed(2));
 
       const existingEntry = sessionCells.find(entry => entry.nameMSFT === "MSFT");
       existingEntry.valueMSFT = purchasedStocks[$i][1];
@@ -405,7 +414,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if(hasEntry(purchasedStocks, "BTC")== -1) {
       purchasedStocks.push(["BTC", value, stock, price, price, 1, value]);
-      createCells("BTC", value);
+      createCells("BTC", value, stock);
 
       sessionCells.push({ nameBTC: "BTC", valueBTC: value, stockBTC: stock, priceBTC: price, sumBTC: price, countBTC: 1, newValueBTC: value  });
       sessionStorage.setItem('sessionCells', JSON.stringify(sessionCells));
@@ -421,6 +430,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
       const cell = document.getElementById('cell2BTC');
       cell.textContent = (parseFloat(purchasedStocks[$i][1]).toFixed(2));
+      const cell2 = document.getElementById('cell3BTC');
+      cell2.textContent = (parseFloat(purchasedStocks[$i][2]).toFixed(2));
 
       const existingEntry = sessionCells.find(entry => entry.nameBTC === "BTC");
       existingEntry.valueBTC = purchasedStocks[$i][1];
@@ -469,7 +480,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (hasEntry(purchasedStocks, "XRP") === -1) {
       purchasedStocks.push(["XRP", value, stock, price, price, 1, value]);
-      createCells("XRP", value);
+      createCells("XRP", value, stock);
 
       sessionCells.push({ nameXRP: "XRP", valueXRP: value, stockXRP: stock, priceXRP: price, sumXRP: price, countXRP: 1, newValueXRP: value });
       sessionStorage.setItem('sessionCells', JSON.stringify(sessionCells));
@@ -484,6 +495,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const cell = document.getElementById('cell2XRP');
       cell.textContent = parseFloat(purchasedStocks[$i][6]).toFixed(2);
+      const cell2 = document.getElementById('cell3XRP');
+      cell2.textContent = parseFloat(purchasedStocks[$i][2]).toFixed(2);
 
       const existingEntry = sessionCells.find(entry => entry.nameXRP === "XRP");
       existingEntry.valueXRP = purchasedStocks[$i][1];
@@ -532,7 +545,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if(hasEntry(purchasedStocks, "HEIA")== -1) {
       purchasedStocks.push(["HEIA", value, stock, price, price, 1, value]);
-      createCells("HEIA", value);
+      createCells("HEIA", value, stock);
 
       sessionCells.push({ nameHEIA: "HEIA", valueHEIA: value, stockHEIA: stock, priceHEIA: price, sumHEIA: price, countHEIA: 1, newValueHEIA: value  });
       sessionStorage.setItem('sessionCells', JSON.stringify(sessionCells));
@@ -548,6 +561,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
       const cell = document.getElementById('cell2HEIA');
       cell.textContent = (parseFloat(purchasedStocks[$i][1]).toFixed(2));
+      const cell2 = document.getElementById('cell3HEIA');
+      cell2.textContent = (parseFloat(purchasedStocks[$i][2]).toFixed(2));
 
       const existingEntry = sessionCells.find(entry => entry.nameHEIA === "HEIA");
       existingEntry.valueHEIA = purchasedStocks[$i][1];
@@ -562,7 +577,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 });
 
-function createCells($n, $v){
+function createCells($n, $v, $s){
   const table = document.getElementById('portTable');
   const newRow = document.createElement('tr');
   const newCell1 = document.createElement('td');
@@ -573,12 +588,18 @@ function createCells($n, $v){
   newCell2.textContent = parseFloat($v).toFixed(2);
   newCell2.setAttribute('id', ("cell2"+$n));
   newCell2.classList.add("puchasedCell2");
+  const newCell3 = document.createElement('td');
+  newCell3.textContent = parseFloat($s).toFixed(2);
+  newCell3.setAttribute('id', ("cell3"+$n));
+  newCell3.classList.add("puchasedCell3");
 
   newRow.appendChild(newCell1);
+  newRow.appendChild(newCell3);
   newRow.appendChild(newCell2);
 
   table.appendChild(newRow);
   localStorage.setItem('myTableHTML', table.innerHTML);
+  console.log($s+" ok");
 }
 
 function hasEntry(array2D, $n) {
@@ -617,7 +638,6 @@ function populatePurchasedStocks() {
         matchingCell['count' + stockName],
         matchingCell['newValue' + stockName]
       ]);
-      console.log(matchingCell['newValue' + stockName]);
     }
   });
 }
@@ -630,6 +650,7 @@ function closeFunction() {
     confirmButtonText: 'OK',
     iconColor: 'red',
     background: '#1d1d1d',
+    confirmButtonColor: "red",
     heightAuto: false
   });
 }
@@ -653,6 +674,7 @@ function purchaseFunction($n) {
     confirmButtonText: 'OK',
     iconColor: 'green',
     background: '#1d1d1d',
+    confirmButtonColor: "green",
     heightAuto: false
   });
 }
